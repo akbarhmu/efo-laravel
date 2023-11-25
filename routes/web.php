@@ -1,5 +1,8 @@
 <?php
 
+use App\Http\Controllers\AuthController;
+use Illuminate\Foundation\Auth\EmailVerificationRequest;
+use Illuminate\Support\Facades\Request;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,6 +17,7 @@ use Illuminate\Support\Facades\Route;
 */
 Route::middleware(['guest'])->group(function () {
     Route::get('login', [AuthController::class, 'login'])->name('login');
+    Route::post('authenticate', [AuthController::class, 'authenticate'])->name('authenticate');
     Route::get('register', [AuthController::class, 'register'])->name('register');
     Route::post('register', [AuthController::class, 'registerUser']);
 });

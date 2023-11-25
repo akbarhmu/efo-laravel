@@ -11,7 +11,7 @@
     <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
 
     <!-- CSS Style -->
-    <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}">
+    @yield('css')
     <title>@yield('title') | Election for Everyone</title>
 </head>
 <body>
