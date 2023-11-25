@@ -3,25 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="{{ asset('assets/img/efo-logo.png') }}" type="image/x-icon">
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    
+
     <!--=============== REMIX ICONS ===============-->
     <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
-    
+
     <!-- CSS Style -->
-    <link rel="stylesheet" href="assets/css/beranda.css">
-    <title>Election for Everyone</title>
+    @yield('css')
+    <title>@yield('title') | Election for Everyone</title>
 </head>
 <body>
     <header class="header" id="header">
         <nav class="nav container">
             <div class="nav-data">
-                <a href="#" class="nav-logo">
-                        <img src="assets/img/efo-logo.png" alt="" srcset="">
+                <a href="{{ route('dashboard') }}" class="nav-logo">
+                        <img src="{{ asset('assets/img/efo-logo.png') }}" alt="" srcset="">
                         <i>Election For Everyone</i>
                 </a>
-               
+
                <div class="nav-toggle" id="nav-toggle">
                     <i class="ri-menu-line nav-burger"></i>
                     <i class="ri-close-line nav-close"></i>
@@ -38,26 +39,26 @@
 
                         <ul class="dropdown-menu">
                             <li>
-                                <a href="#" class="dropdown-link">
+                                <a href="{{ route('dashboard') }}" class="dropdown-link">
                                     <i class="ri-article-line"></i> Tentang Kami
-                                </a>                          
+                                </a>
                             </li>
 
                             <li>
-                                <a href="pemilu.html" class="dropdown-link">
+                                <a href="{{ route('pemilu') }}" class="dropdown-link">
                                     <i class="fa-solid fa-asterisk"></i> Pemilu
                                 </a>
                             </li>
 
                             <li>
-                                <a href="#" class="dropdown-link">
+                                <a href="{{ route('tujuan') }}" class="dropdown-link">
                                     <i class="fa-solid fa-list-check"></i> Tujuan Pemilu
                                 </a>
                             </li>
                         </ul>
                     </li>
 
-                    <li><a href="#" class="nav-link">Data Diri</a></li>
+                    <li><a href="{{ route('data-diri') }}" class="nav-link">Data Diri</a></li>
 
                     <!--=============== DROPDOWN 1 ===============-->
                     <li class="dropdown-item">
@@ -67,25 +68,25 @@
 
                         <ul class="dropdown-menu">
                             <li>
-                                <a href="#" class="dropdown-link">
+                                <a href="{{ route('urgensi') }}" class="dropdown-link">
                                     <i class="ri-article-line"></i> Deskripsi
-                                </a>                          
+                                </a>
                             </li>
 
                             <li>
-                                <a href="#" class="dropdown-link">
+                                <a href="{{ route('syarat-ketentuan') }}" class="dropdown-link">
                                     <i class="fa-solid fa-asterisk"></i> Syarat & Ketentuan
                                 </a>
                             </li>
 
                             <li>
-                                <a href="#" class="dropdown-link">
+                                <a href="{{ route('tata-cara') }}" class="dropdown-link">
                                     <i class="fa-solid fa-list-check"></i> Tata Cara
                                 </a>
                             </li>
 
                             <li>
-                                <a href="#" class="dropdown-link">
+                                <a href="{{ route('pengajuan') }}" class="dropdown-link">
                                     <i class="fa-solid fa-file-import"></i> Pengajuan
                                 </a>
                             </li>
@@ -96,64 +97,21 @@
                         <input type="search" placeholder="Search">
                         <span class="fas fa-search"></span>
                     </li>
-                  
+
                     <li class="user-icon">
                         <i class="fa-solid fa-user"></i>
                     </li>
-                    
+
                 </ul>
             </div>
         </nav>
     </header>
-    
+
     <main>
-        <div class="overlay container">
-            <!-- Overlay inner wrapper -->
-            <div class="overlay-inner">
-                <!-- Title -->
-                <div class="">
-                    <div class="dot"></div>
-                    <h1 class="overlay-title">
-                        TENTANG KAMI 
-                    </h1>
-                </div>
-                <div class="overlay-row">
-                    <ul class="overlay-list">
-                        <li>
-                            “Tagline” 
-                        </li>
-                        <li>
-                            Mudah
-                        </li>
-                        <li>
-                            Murah
-                        </li>
-                        <li>
-                            Accessible
-                        </li> <br>
-                        <p>
-                            Election for everyone merupakan prototipe yang bertujuan agar masyarakat rantau  dapat 
-                            lebih mudah untuk mendapatkan hak pilihnya melalui platform digital yang mudah. 
-                        </p>
-                    </ul>
-                    <div>
-                        <p class="overlay-description">
-                            Election For Everyone merupakan prototipe awal sebagai bentuk mendukung digital civics di indonesia. 
-                            prototipe ini  memberikan desain kemudahan akses  pemilih perantau untuk pindah memilih secara online 
-                            tanpa perlu kembali ke domisili asal yang memerlukan waktu dan biaya lebih. kami berinovasi untuk 
-                            melakukan digitalisasi persyaratan pindah memilih melalui platform election for everyone mulai dari 
-                            syarat dan tata cara pengajuan. kami mendukung penuh pemilu dengan mengatasi permasalahan golput 
-                            akibat faktor kesulitan pindah memilih oleh masyarakat perantau. 
-                        </p>
-                    </div>
-                </div>
-                <!-- Description -->
-                
-            </div>
-        </div>
+        @yield('content')
     </main>
-    
+
     <!--=============== MAIN JS ===============-->
-    <script src="assets/js/navbar.js"></script>
+    <script src="{{ asset('assets/js/navbar.js') }}"></script>
 </body>
 </html>

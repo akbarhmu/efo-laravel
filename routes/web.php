@@ -1,6 +1,8 @@
 <?php
 
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\PageController;
+use App\Http\Controllers\PengajuanController;
 use Illuminate\Foundation\Auth\EmailVerificationRequest;
 use Illuminate\Support\Facades\Request;
 use Illuminate\Support\Facades\Route;
@@ -40,7 +42,16 @@ Route::post('/email/verification-notification', function (Request $request) {
 })->middleware(['auth', 'throttle:6,1'])->name('verification.send');
 
 Route::middleware(['auth', 'verified'])->group(function () {
-    Route::get('/', function () {
-        return view('beranda');
-    })->name('dashboard');
+    Route::get('/', [PageController::class, 'dashboard'])->name('dashboard');
+    Route::get('/pemilu', [PageController::class, 'pemilu'])->name('pemilu');
+    Route::get('/tujuan-pemilu', [PageController::class, 'tujuanPemilu'])->name('tujuan');
+
+    Route::get('/data-diri', [PageController::class, 'dataDiri'])->name('data-diri');
+
+    Route::prefix('/pindah-memilih')->group(function () {
+        Route::get('/', [PengajuanController::class, 'urgensiPage'])->name('urgensi');
+        Route::get('/syarat-ketentuan', [PengajuanController::class, 'syaratKetentuanPage'])->name('syarat-ketentuan');
+        Route::get('/tata-cara', [PengajuanController::class, 'tataCaraPage'])->name('tata-cara');
+        Route::get('/pengajuan', [PengajuanController::class, 'pengajuanPage'])->name('pengajuan');
+    });
 });
