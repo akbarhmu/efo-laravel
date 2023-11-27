@@ -9,22 +9,56 @@
 body,
 input {
   font-family: "Poppins", sans-serif;
+  background-color: #0057ff;
 }
 
 .container {
   position: relative;
-  width: 100%;
-  background-color: #0057ff;
-  min-height: 100vh;
+  width: 60%;
+  min-height: auto;
   overflow: hidden;
   text-align: center;
   color: #fff;
+  margin-top: 350px;
+  margin-inline: auto;
+}
+
+i{
+  font-size: 128px;
+  margin-bottom: 50px;
+}
+
+h1{
+  font-size: 60px;
+}
+
+p{
+  font-size: 20px;
+  margin-bottom: 25px;
+}
+
+a{
+  color: #fff;
+  font-size: 20px;
 }
 
 @media (max-width: 870px) {
   .container {
-    min-height: 800px;
-    height: 100vh;
+    width: 100%;
+    margin-top: 50px;
+  }
+
+  i{
+    font-size: 96px;
+  }
+
+  h1{
+    font-size: 42px;
+    margin-bottom: 25px;
+  }
+
+  p{
+    font-size: 16px;
   }
 }
 

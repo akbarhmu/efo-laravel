@@ -78,8 +78,8 @@ a {
   height: var(--header-height);
 }
 
-.nav-logo, 
-.nav-burger, 
+.nav-logo,
+.nav-burger,
 .nav-close {
   color: var(--white-color);
 }
@@ -115,7 +115,7 @@ a {
   height: 32px;
 }
 
-.nav-burger, 
+.nav-burger,
 .nav-close {
   position: absolute;
   width: max-content;
@@ -247,7 +247,7 @@ a {
   transition: transform .4s;
 }
 
-.dropdown-link, 
+.dropdown-link,
 .dropdown-sublink {
   padding: 1.25rem 1.25rem 1.25rem 2.5rem;
   color: var(--white-color);
@@ -260,20 +260,20 @@ a {
   box-shadow: 0 0.75rem 2rem 0 rgba(0, 0, 0, 0.1);
 }
 
-.dropdown-link i, 
+.dropdown-link i,
 .dropdown-sublink i {
   font-size: 1.25rem;
   font-weight: initial;
 }
 
-.dropdown-link:hover, 
+.dropdown-link:hover,
 .dropdown-sublink:hover,
 .dropdown-link:hover i {
   font-weight: 800;
   text-shadow: 2px 2px 4px #000;
 }
 
-.dropdown-menu, 
+.dropdown-menu,
 .dropdown-submenu {
   max-height: 0;
   overflow: hidden;
@@ -281,7 +281,7 @@ a {
 }
 
 /* Show dropdown menu & submenu */
-.dropdown-item:hover .dropdown-menu, 
+.dropdown-item:hover .dropdown-menu,
 .dropdown-subitem:hover > .dropdown-submenu {
   max-height: 1000px;
   transition: max-height .4s ease-in;
@@ -351,32 +351,15 @@ p {
   /* line-height: 2.75rem; */
   font-weight: 500;
   letter-spacing: -0.025em;
-  margin-bottom: 2rem;
   margin-left: 15px;
 }
 
-.overlay-row{
-  flex-direction: row;
-  display: grid;
-  grid-template-columns: auto auto;
-}
-
-.overlay-list{
-  margin-left: 50px;
-  font-size: 1.35rem;
-  text-align: center;
-  margin: 25px;
-}
-
-.overlay-list li{
-  font-size: 2rem;
-}
-
 .overlay-description {
-  font-size: 1.5rem;
-  line-height: 2rem;
+  font-size: 1.35rem;
   /* margin-bottom: 3rem; */
   text-align: justify;
+  margin-left: 50px;
+  margin-bottom: 25px;
 }
 
 .text-gradient {
@@ -401,42 +384,93 @@ a {
   align-items: center;
 }
 
+.sign-in-form{
+  display: grid;
+  justify-content: space-between;
+  grid-template-columns: auto auto;
+}
+
+.left-row{
+  padding: 25px;
+  margin-inline: auto;
+  align-items: center;
+  justify-content: center;
+  width: 600px;
+}
+
+.left-row p{
+  margin-left: 30px;
+  font-size: 20px;
+}
+
+.right-row{
+  padding: 25px;
+  margin-inline: auto;
+  align-items: center;
+  justify-content: center;
+  width: 600px;
+}
+
+.right-row p{
+  margin-left: 30px;
+  font-size: 20px;
+}
+
 .input-field {
-    max-width: 380px;
-    width: 100%;
-    background-color: #f0f0f0;
-    margin: 10px 0;
-    height: 55px;
-    border-radius: 55px;
-    display: grid;
-    grid-template-columns: 15% 85%;
-    padding: 0 0.4rem;
-    position: relative;
+  max-width: 450px;
+  width: 100%;
+  background-color: #f0f0f0;
+  margin: 10px 0;
+  height: 55px;
+  border-radius: 55px;
+  display: grid;
+  grid-template-columns: 15% 85%;
+  padding: 0 0.4rem;
+  position: relative;
 }
 
 .input-field i {
-    text-align: center;
-    line-height: 55px;
-    color: #acacac;
-    transition: 0.5s;
-    font-size: 1.1rem;
+  text-align: center;
+  line-height: 55px;
+  color: #acacac;
+  transition: 0.5s;
+  font-size: 1.1rem;
 }
 
 .input-field input {
-    background: none;
-    outline: none;
-    border: none;
-    line-height: 1;
-    font-weight: 600;
-    font-size: 1.1rem;
-    color: #333;
+  background: none;
+  outline: none;
+  border: none;
+  line-height: 1;
+  font-weight: 600;
+  font-size: 1.1rem;
+  color: #333;
   }
 
-  .input-field input::placeholder {
-    color: #aaa;
-    font-weight: 500;
-  }
-  
+.input-field input::placeholder {
+  color: #aaa;
+  font-weight: 500;
+}
+
+.btn {
+  width: 150px;
+  background-color: #fff;
+  border: none;
+  outline: none;
+  height: 49px;
+  border-radius: 49px;
+  font-weight: 600;
+  margin: 10px 0;
+  cursor: pointer;
+  transition: 0.5s;
+  font-size: 16px;
+}
+
+.btn:hover {
+  background-color: #0057ff;
+  color: #fff;
+}
+
 
 /*=============== BREAKPOINTS ===============*/
 /* For small devices */
@@ -474,17 +508,17 @@ a {
   .search-icon {
     margin-left: 20px;
   }
-  
+
   .search-icon input{
 
   }
-  
+
   .search-icon span{
     margin: 7px;
     font-size: 24px;
     text-shadow: none;
   }
-  
+
   .user-icon{
     margin-left: 20px;
     margin-top: 15px;
@@ -506,7 +540,7 @@ a {
   }
 
   .overlay-description {
-    font-size: 1.15rem;
+    font-size: 1.5rem;
     line-height: 1.25rem;
     margin-bottom: 1rem;
   }
@@ -542,12 +576,12 @@ a {
     background-color: transparent;
   }
 
-  .dropdown-item, 
+  .dropdown-item,
   .dropdown-subitem {
     position: relative;
   }
 
-  .dropdown-menu, 
+  .dropdown-menu,
   .dropdown-submenu {
     max-height: initial;
     overflow: initial;
@@ -559,7 +593,7 @@ a {
     transition: opacity .3s, top .3s;
   }
 
-  .dropdown-link, 
+  .dropdown-link,
   .dropdown-sublink {
     padding-inline: 1rem 3.5rem;
   }

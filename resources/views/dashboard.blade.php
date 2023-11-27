@@ -7,14 +7,14 @@
 @endsection
 
 @section('content')
-<div class="overlay container">
+<div class="overlay">
     <!-- Overlay inner wrapper -->
     <div class="overlay-inner">
         <!-- Title -->
-        <div class="">
+        <div class="dot-row">
             <div class="dot"></div>
             <h1 class="overlay-title">
-                TENTANG KAMI
+                TENTANG PEMILU
             </h1>
         </div>
         <div class="overlay-row">
@@ -47,8 +47,45 @@
                 </p>
             </div>
         </div>
-        <!-- Description -->
+        <!-- News -->
+        <div class="dot-row">
+            <div class="dot"></div>
+            <h1 class="overlay-title">
+                KUMPULAN BERITA TERKAIT PEMILU
+            </h1>
+        </div>
 
+        <div class="overlay-news">
+            <div class="news-1">
+                <img src="assets/img/bumn.png" alt="">
+                <h1 class="news-title">
+                    Ramai-ramai Timses Mundur dari Komisaris BUMN Jelang Pilpres
+                </h1>
+                <p>
+                    Jakarta - Sejumlah timses paslon mundur dari jabatan Komisaris
+                    BUMN jelang Pemilu 2024. Mereka mundur lantaran menjadi bagian
+                    dari tim yang akan mengkampanyekan paslon dukungannya.
+                </p>
+                <a class="news-link" href="https://news.detik.com/pemilu/d-7055555/ramai-ramai-timses-mundur-dari-komisaris-bumn-jelang-pilpres">
+                    Lebih lengkap..
+                </a>
+            </div>
+
+            <div class="news-2">
+                <img src="assets/img/kampanye.png" alt="">
+                <h1 class="news-title">
+                    Elektabilitas Terbaru Capres-Cawapres Sepekan Jelang Masa Kampanye
+                </h1>
+                <p>
+                    Jakarta, CNN Indonesia -- Komisi Pemilihan Umum (KPU) sudah
+                    menetapkan tiga capres-cawapres yang akan bertarung di Pilpres
+                    2024 mendatang. Para calon pun sudah mendapat nomor urut.
+                </p>
+                <a class="news-link" href="https://www.cnnindonesia.com/nasional/20231117131924-617-1025557/elektabilitas-terbaru-capres-cawapres-sepekan-jelang-masa-kampanye">
+                    Lebih lengkap..
+                </a>
+            </div>
+        </div>
     </div>
 </div>
 @endsection
