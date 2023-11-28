@@ -23,6 +23,10 @@ class User extends Authenticatable implements MustVerifyEmail
         'name',
         'email',
         'password',
+        'gender',
+        'address',
+        'tps_address',
+        'tps_number',
     ];
 
     /**
@@ -44,4 +48,9 @@ class User extends Authenticatable implements MustVerifyEmail
         'email_verified_at' => 'datetime',
         'password' => 'hashed',
     ];
+
+    public function getProfileCompleteAttribute(): bool
+    {
+        return (!$this->gender == '' || !$this->address == '' || !$this->tps_address == '' || !$this->tps_number == '');
+    }
 }

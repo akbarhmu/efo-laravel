@@ -47,11 +47,12 @@ Route::middleware(['auth', 'verified'])->group(function () {
     Route::get('/tujuan-pemilu', [PageController::class, 'tujuanPemilu'])->name('tujuan');
 
     Route::get('/data-diri', [PageController::class, 'dataDiri'])->name('data-diri');
+    Route::post('/data-diri', [PageController::class, 'updateProfile']);
 
     Route::prefix('/pindah-memilih')->group(function () {
         Route::get('/', [PengajuanController::class, 'urgensiPage'])->name('urgensi');
         Route::get('/syarat-ketentuan', [PengajuanController::class, 'syaratKetentuanPage'])->name('syarat-ketentuan');
         Route::get('/tata-cara', [PengajuanController::class, 'tataCaraPage'])->name('tata-cara');
-        Route::get('/pengajuan', [PengajuanController::class, 'pengajuanPage'])->name('pengajuan');
+        Route::get('/pengajuan', [PengajuanController::class, 'pengajuanPage'])->name('pengajuan')->middleware('profile.complete');
     });
 });
