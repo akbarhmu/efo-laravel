@@ -99,7 +99,12 @@
                     </li>
 
                     <li class="user-icon">
-                        <i class="fa-solid fa-user"></i>
+                        <form action="{{ route('logout') }}" method="post">
+                            @csrf
+                            <button type="submit" class="btn-logout">
+                                <i class="fa-solid fa-user"></i>
+                            </button>
+                        </form>
                     </li>
 
                 </ul>

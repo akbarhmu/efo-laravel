@@ -44,6 +44,8 @@ Route::post('/email/verification-notification', function (Request $request) {
     return back()->with('message', 'Link verifikasi dikirim!');
 })->middleware(['auth', 'throttle:6,1'])->name('verification.send');
 
+Route::post('logout', [AuthController::class, 'logout'])->middleware('auth')->name('logout');
+
 Route::middleware(['auth', 'verified'])->group(function () {
     Route::get('/', [PageController::class, 'dashboard'])->name('dashboard');
     Route::get('/pemilu', [PageController::class, 'pemilu'])->name('pemilu');
