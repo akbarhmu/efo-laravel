@@ -41,9 +41,18 @@ class PengajuanController extends Controller
             $pengajuan->address = $request->validated('address');
             $pengajuan->domicile_address = $request->validated('domicile_address');
             $pengajuan->domicile_rt_rw = $request->validated('domicile_rt_rw');
-            $pengajuan->file_scan_ktp = $request->validated('file_scan_ktp')->store('scan_ktp');
-            $pengajuan->file_scan_dpt = $request->validated('file_scan_dpt')->store('scan_dpt');
-            $pengajuan->file_recommendation_letter = $request->validated('file_recommendation_letter')->store('recommendation_letter');
+
+            $scanKtpFilename = $request->validated('file_scan_ktp')->hashName();
+            $request->validated('file_scan_ktp')->store('files');
+            $pengajuan->file_scan_ktp = $scanKtpFilename;
+
+            $scanDptFilename = $request->validated('file_scan_dpt')->hashName();
+            $request->validated('file_scan_dpt')->store('files');
+            $pengajuan->file_scan_dpt = $scanDptFilename;
+
+            $recommendationLetterFilename = $request->validated('file_recommendation_letter')->hashName();
+            $request->validated('file_recommendation_letter')->store('files');
+            $pengajuan->file_recommendation_letter = $recommendationLetterFilename;
             $pengajuan->save();
             DB::commit();
 

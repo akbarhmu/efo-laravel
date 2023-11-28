@@ -78,7 +78,7 @@
                         </li>
 
                         <li class="sidebar-item @if(request()->is('dashboard/pengajuans*')) active @endif">
-                            <a href="index.html" class='sidebar-link'>
+                            <a href="{{ route('admin.dashboard.pengajuans.index') }}" class='sidebar-link'>
                                 <i class="bi bi-file-earmark-medical-fill"></i>
                                 <span>Pengajuan</span>
                             </a>

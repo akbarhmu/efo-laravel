@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\Dashboard\DashboardController;
+use App\Http\Controllers\Dashboard\PengajuanController as PengajuanAdminController;
 use App\Http\Controllers\Dashboard\UserController;
 use App\Http\Controllers\PageController;
 use App\Http\Controllers\PengajuanController;
@@ -66,4 +67,12 @@ Route::middleware(['auth', 'admin'])->prefix('dashboard')->group(function () {
     Route::resource('users', UserController::class, [
         'as' => 'admin.dashboard'
     ]);
+    Route::resource('pengajuans', PengajuanAdminController::class, [
+        'as' => 'admin.dashboard'
+    ]);
+
+    Route::post('/pengajuans/{id}/approve', [PengajuanAdminController::class, 'approve'])->name('admin.dashboard.pengajuans.approve');
+    Route::get('/pengajuans/{id}/reject', [PengajuanAdminController::class, 'reject'])->name('admin.dashboard.pengajuans.reject');
+
+    Route::get('/files/{filename}', [PengajuanAdminController::class, 'getFile'])->name('get.file');
 });
