@@ -1,6 +1,8 @@
 <?php
 
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\Dashboard\DashboardController;
+use App\Http\Controllers\Dashboard\UserController;
 use App\Http\Controllers\PageController;
 use App\Http\Controllers\PengajuanController;
 use Illuminate\Foundation\Auth\EmailVerificationRequest;
@@ -57,4 +59,11 @@ Route::middleware(['auth', 'verified'])->group(function () {
         Route::post('/pengajuan', [PengajuanController::class, 'storePengajuan'])->middleware('profile.complete');
         Route::get('/pengajuan/success', [PengajuanController::class, 'pengajuanSuccess'])->name('pengajuan.success')->middleware('profile.complete');
     });
+});
+
+Route::middleware(['auth', 'admin'])->prefix('dashboard')->group(function () {
+    Route::get('/', [DashboardController::class, 'index'])->name('admin.dashboard');
+    Route::resource('users', UserController::class, [
+        'as' => 'admin.dashboard'
+    ]);
 });
