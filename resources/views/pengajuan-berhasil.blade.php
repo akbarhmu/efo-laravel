@@ -10,7 +10,7 @@
     <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
 
     <!-- CSS Style -->
-    <link rel="stylesheet" href="assets/css/berhasil.css">
+    <link rel="stylesheet" href="{{ asset('assets/css/berhasil.css') }}">
     <title>Election for Everyone</title>
 </head>
 <body>
@@ -21,7 +21,7 @@
             Data Anda telah kami terima. Silahkan cek
             laman DPT Anda secara berkala di <a href="https://cekdptonline.kpu.go.id/" target="_blank">cekdptonline.kpu.go.id</a>
         </p>
-        <a href="index.html">Tekan untuk kembali ke beranda</a>
+        <a href="{{ route('dashboard') }}">Tekan untuk kembali ke beranda</a>
     </div>
 
     <!--=============== MAIN JS ===============-->

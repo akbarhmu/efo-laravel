@@ -54,5 +54,7 @@ Route::middleware(['auth', 'verified'])->group(function () {
         Route::get('/syarat-ketentuan', [PengajuanController::class, 'syaratKetentuanPage'])->name('syarat-ketentuan');
         Route::get('/tata-cara', [PengajuanController::class, 'tataCaraPage'])->name('tata-cara');
         Route::get('/pengajuan', [PengajuanController::class, 'pengajuanPage'])->name('pengajuan')->middleware('profile.complete');
+        Route::post('/pengajuan', [PengajuanController::class, 'storePengajuan'])->middleware('profile.complete');
+        Route::get('/pengajuan/success', [PengajuanController::class, 'pengajuanSuccess'])->name('pengajuan.success')->middleware('profile.complete');
     });
 });
